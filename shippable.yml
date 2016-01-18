@@ -25,6 +25,7 @@ before_script:
   - sudo cp -f config/site-nginx.conf /etc/nginx/sites-enabled/site-nginx.conf
   - sudo sed -e "s?%BUILD_DIR%?$(pwd)?g" --in-place /etc/nginx/sites-enabled/site-nginx.conf
   - sudo service nginx start
+  - sudo service nginx reload
 
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ExampleTest.php
