@@ -1,4 +1,4 @@
-build_image: drydock/u12phpall:tip
+build_image: drydock/u14phpall:tip
 
 language: php
 
