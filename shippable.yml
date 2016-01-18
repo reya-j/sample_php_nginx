@@ -1,5 +1,6 @@
-language: php
+build_image: drydock/u14phpall:prod
 
+language: php
 
 php:
   - 5.5
