@@ -1,4 +1,4 @@
-build_image: chetantarale/u14phpall:tip
+build_image: drydock/u14phpall:tip
 
 language: php
 
@@ -19,8 +19,6 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install nginx
   - sudo addgroup nobody
-    # - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
-    #- ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   - sudo mkdir -p /var/www/example.com/html
   - sudo chown -R $USER:$USER /var/www/example.com/html
   - sudo chmod -R 755 /var/www
