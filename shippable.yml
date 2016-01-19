@@ -1,9 +1,12 @@
-build_image: chetantarale/u14phpall:today
+build_image: chetantarale/u14phpall:tip
 
 language: php
 
 php:
+  - 5.4
   - 5.5
+  - 5.6
+  - '7.0'
 
 services:
   - mysql
@@ -16,12 +19,12 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install nginx
   - sudo addgroup nobody
-  - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
-  - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
+    # - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+    #- ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   - sudo mkdir -p /var/www/example.com/html
   - sudo chown -R $USER:$USER /var/www/example.com/html
   - sudo chmod -R 755 /var/www
-  - sudo cp -f config/index.html /var/www/example.com/html/
+  - sudo cp -f config/index.txt /var/www/example.com/html/
   - sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
   - sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
   - sudo rm /etc/nginx/sites-enabled/default
