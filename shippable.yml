@@ -1,4 +1,4 @@
-build_image: drydock/u14phpall:prod
+build_image: chetantarale/u14phpall:today
 
 language: php
 
