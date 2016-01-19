@@ -20,8 +20,14 @@ before_script:
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
   - sudo cp -f config/site-nginx.conf /etc/nginx/sites-enabled/site-nginx.conf
   - sudo sed -e "s?%BUILD_DIR%?$(pwd)?g" --in-place /etc/nginx/sites-enabled/site-nginx.conf
-  - sudo service nginx start
-  - sudo service nginx reload
+  - sudo mkdir -p /var/www/example.com/html
+  - sudo chown -R $USER:$USER /var/www/example.com/html
+  - sudo chmod -R 755 /var/www
+  - sudo cp -f config/index.html /var/www/example.com/html/
+  - sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
+  - sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+  - sudo rm /etc/nginx/sites-enabled/default
+  - sudo service nginx restart
 
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ExampleTest.php
