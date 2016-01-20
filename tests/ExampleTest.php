@@ -4,7 +4,7 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
   public function testExample() {
   	$exmp = new Example();
   	echo $exmp->test();
-    $this->assertEquals($exmp->test(),'shippable');
+    $this->assertEquals($exmp->test(),'shble');
   }
 }
 ?>
