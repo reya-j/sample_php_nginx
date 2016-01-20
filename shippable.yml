@@ -26,7 +26,6 @@ before_script:
   - sudo cp config/site-nginx.conf /etc/nginx/sites-available/example.com
   - sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
   - sudo rm /etc/nginx/sites-enabled/default
-  - sudo nano /etc/nginx/nginx.conf
   - sudo service nginx restart
 
 script:
