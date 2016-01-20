@@ -13,7 +13,7 @@ services:
 
 addons:
   hosts:
-    - example.org
+    - example.com
 
 before_script:
   - sudo apt-get update
