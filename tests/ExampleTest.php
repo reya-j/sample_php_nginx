@@ -4,6 +4,10 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
   public function testExample() {
   	$exmp = new Example();
   	echo $exmp->test();
-    $this->assertEquals(strpos($exmp->test(), 'h') == 2, true);  }
+  	if (strpos($exmp->test(),'ship') !== false) {
+      echo 'I think it worked!';
+    }
+    $this->assertEquals(strpos($exmp->test(), 'h') == 2, true);  
+  }
 }
 ?>
