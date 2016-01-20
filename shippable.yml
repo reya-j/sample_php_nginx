@@ -22,7 +22,7 @@ before_script:
   - sudo mkdir -p /var/www/example.com/html
   - sudo chown -R $USER:$USER /var/www/example.com/html
   - sudo chmod -R 755 /var/www
-  - sudo cp -f config/index.txt /var/www/example.com/html/
+  - sudo cp -f config/index.html /var/www/example.com/html/
   - sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
   - sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
   - sudo rm /etc/nginx/sites-enabled/default
