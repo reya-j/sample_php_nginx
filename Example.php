@@ -1,7 +1,7 @@
 <?php
 class Example {
   public function test() {
-  	$text = http://localhost;
+  	$text = file_get_contents("http://localhost");
     return $text;
   }
 }
