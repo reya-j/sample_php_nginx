@@ -19,12 +19,11 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install nginx
   - sudo addgroup nobody
-  - /usr/share/nginx/html - serves here from default
   - sudo mkdir -p /var/www/example.com/html
   - sudo chown -R $USER:$USER /var/www/example.com/html
   - sudo chmod -R 755 /var/www
   - sudo cp config/index.html /var/www/example.com/html/index.html
-  - sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
+  - sudo cp config/site-nginx.conf /etc/nginx/sites-available/example.com
   - sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
   - sudo rm /etc/nginx/sites-enabled/default
   - sudo nano /etc/nginx/nginx.conf
